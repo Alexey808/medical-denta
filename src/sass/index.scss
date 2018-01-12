@@ -1,0 +1,41 @@
+/* --- helpers ----------------------------------------- */
+@import "helpers/variables.scss";
+@import "helpers/fonts.scss";
+@import "helpers/mixin.scss";
+@import "helpers/main.scss";
+
+/* --- header ------------------------------------------ */
+
+@media screen and (min-width: 981px) {
+	@import "desktop/header/header.scss";
+}
+@media screen and (max-width: 980px) and (min-width: 521px) {
+	@import "tablet/header/t-header.scss";
+}
+@media screen and (max-width: 520px) {
+	@import "mobile/header/m-header.scss";
+}
+
+/* --- content ----------------------------------------- */
+
+@media screen and (min-width: 981px) {
+	@import "desktop/content/content.scss";
+}
+@media screen and (max-width: 980px) and (min-width: 521px) {
+	@import "tablet/content/t-content.scss";
+}
+@media screen and (max-width: 520px) {
+	@import "mobile/content/m-content.scss";
+}
+
+/* --- footer ------------------------------------------ */
+
+@media screen and (min-width: 981px) {
+	@import "desktop/footer/footer.scss";
+}
+@media screen and (max-width: 980px) and (min-width: 521px) {
+	@import "tablet/footer/t-footer.scss";
+}
+@media screen and (max-width: 520px) {
+	@import "mobile/footer/m-footer.scss";
+}
