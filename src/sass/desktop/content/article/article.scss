@@ -1,0 +1,19 @@
+/* content/article/article.scss*/
+.article {
+    &__title {}
+    &__items {}
+    &__button {}
+}
+
+/* content/article/article-item/article-item.scss*/
+.article-item {
+    &__header {}
+    &__content {}
+}
+
+/* content/article/article-item/article-item/article-body/article-body.scss*/
+.article-body {
+    &__tit {}
+    &__content {}
+    &__link {}
+}

@@ -1,15 +1,12 @@
 @mixin wrap() {
-    width: 940px;
+    width: 1024px;
     height: 100%;
     margin: 0 auto;
+    padding: 0 10px;
 }
-@mixin wrap-tablet() {
-    max-width: 940px;
-    width: auto;
-}
-@mixin wrap-mobile() {
-    min-width: 320px;
-    width: auto;
+@mixin list() {
+    min-width: 1280px;
+    max-width: 1920px;
 }
 
 

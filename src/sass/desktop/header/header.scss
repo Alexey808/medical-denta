@@ -1,0 +1,93 @@
+/* header/header.scss */
+.header-container {
+
+}
+.header {
+    background-color: $color2;
+    height: 50px;
+    color: $color1;
+    font-family: $fonts;
+    font-size: 12pt;
+
+    &__feedback {
+        
+    }
+    &__menu {}
+    &__logo {}
+    &__slider {}
+}
+
+
+/* header/feedback/feedback.scss */
+.feedback {
+    &__point {
+        display: inline-block;
+        height: 20px;
+        margin: 15px 32px 15px 0;
+
+
+    }
+
+
+
+    &__point-ico {
+        
+    }
+    &__point-link {
+        color: $color1;
+    }
+    &__button {
+        display: inline-block;
+        
+        background-color: $color6;
+        width: 232px;
+        height: 100%;
+        &:active {
+            background-color: $color7;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        
+    }
+    &__button:active &__btn-ico {
+        display: none;
+    }
+    &__button:active &__btn-ico--active {
+        display: inline-block;
+    }
+
+
+    &__btn-ico {}
+    &__btn-ico--active {
+        display: none;
+    }
+    &__btn-name {}
+    [class*="-ico"] { /* всем в родителе кто содержит -ico */
+        margin-right: 16px;
+    }
+}
+
+/* header/header-menu/header-menu.scss */
+.header-menu {
+    &__link {}
+}
+
+/* header/header-slider/header-slider.scss */
+.header-slider {
+    &__pages {}
+    &__btn {}
+    &__btn-left {}
+    &__btn-right {}
+    &__ind {}
+    &__ind-dot {}
+    &__ind-dot--active {}
+}
+
+/* header/header-slider/header-page/header-page.scss */
+.header-page {
+    &__tit {}
+    &__date {}
+    &__btn {}
+    &--active {}
+}

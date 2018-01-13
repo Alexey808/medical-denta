@@ -46,7 +46,7 @@ var path = {
     },
     watch: {
         html: 'src/*.html',
-        style: 'src/sass/*.scss',
+        style: 'src/sass/**/*.scss',
         js: 'src/js/index.js',
         img: 'src/img/*.*'
     },
@@ -87,6 +87,7 @@ gulp.task('watch', ()=> {
 // Сборка html -----------------------------------------------------+
 gulp.task('html:build', ()=> {
     gulp.src(path.src.html)
+        .pipe(rigger())
         .pipe(gulp.dest(path.build.html)) 
         .pipe(browserSync.reload({stream: true})); 
 });
