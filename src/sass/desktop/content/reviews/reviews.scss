@@ -1,16 +1,70 @@
 /* content/reviews/reviews.scss*/
+.reviews-container {
+    @include wrap();
+
+}
 .reviews {
-    &__title {}
-    &__button {}
-    &__btn-review {}
-    &__btn-allreview {}
+    &__title {
+    	@include title();
+    }
+    &__button {
+        display: flex;
+        @include container('btn');
+        margin-bottom: 56px;
+        font-size: 12px;
+        justify-content: flex-start;
+    }
+    &__btn-review {
+        @include button(232px, 60px);
+        background-color: $color6;
+        color: $color1;
+        margin-right:32px;
+        &:hover {
+            background-color: $color7;
+            cursor: pointer;
+        }
+    }
+    &__btn-allreview {
+        @include button(230px, 58px);
+        border: 1px solid $color4;
+        color: $color2;
+
+        &:hover {
+            background-color: $color4;
+            cursor: pointer;
+        }
+    }
 }
 
 /* content/reviews/reviews-box/reviews-box.scss */
 .reviews-box {
-    &__item {}
-    &__btn-left {}
-    &__btn-right {}
+    display: flex;
+    background-color: $color3;
+    color: $color2;
+    font-size: 18px;
+    font-weight: 100;
+    margin-bottom: 32px;
+
+    &__item {
+        margin: 32px;
+    }
     &__content {}
-    &__content-footer {}
+    &__content-author {
+        margin-top: 32px;
+        font-style: italic;
+    }
+    &__arrow {
+        background-color: $color4;
+        width: 56px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background-color: $color9;
+            cursor: pointer;
+        }
+    }
 }
+

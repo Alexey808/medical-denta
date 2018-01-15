@@ -1,15 +1,74 @@
 @mixin wrap() {
-    width: 1024px;
+    max-width: 1024px;
+    min-width: 320px;
     height: 100%;
     margin: 0 auto;
-    padding: 0 10px;
+    // padding: 0 10px;
+    // min-width: 1280px;
+    // max-width: 1920px;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    
 }
-@mixin list() {
+@mixin canvas() {
     min-width: 1280px;
     max-width: 1920px;
 }
+@mixin title() {
+    padding: 56px 0 32px;
+    font-family: $fonts-light;
+    font-size: 32px;
+    color: $color8;
+    font-weight: 300;
+    /*975*/
+    @media screen and (max-width: 1005px) {
+        text-align: center;
+    }
+}
+@mixin button($w, $h) {
+    width: $w;
+    height: $h;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin container($x) {
+    @if $x == 'btn' {
+        @media screen and (max-width: 1005px) {
+            justify-content: center;
+            flex-wrap: wrap;
+            /*всем дочерним классам содержащие в классе btn*/
+            &>[class*=btn]{
+                margin: 5px;
 
+            }
 
+        }
+    }
+    @if $x == 'box' {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media screen and (max-width: 1010px) {
+            justify-content: space-around; /*IE*/
+            justify-content: space-evenly; 
+        }
+    }
+    @if $x == 'txt' {
+        justify-content: space-between;
+        @media screen and (max-width: 1005px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    @if $x == 'soc' {
+        
+    }
+}
 /* --- АНИМАЦИЯ ---------------------------------------- */
 
 /* --- bounceIn */
@@ -172,3 +231,33 @@
     animation-name: slideInDown;
     animation-duration: $duration;
 }
+
+
+/*
+
+@mixin container($x) {
+    @if $x == 'btn' {
+        @media screen and (max-width: 975px) {
+            justify-content: center;
+        }
+    }
+    @if $x == 'box' {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media screen and (max-width: 980px) {
+            justify-content: space-around;
+            justify-content: space-evenly; 
+        }
+    }
+    @if $x == 'txt' {
+        justify-content: space-between;
+        @media screen and (max-width: 975px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+}
+
+ */

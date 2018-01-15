@@ -1,8 +1,74 @@
 /* content/services/services.scss*/
+.services-container {
+    @include wrap();
+}
 .services {
-    .__title {}
-    .__items {}
-    .__item {}
-    .__item-ico {}
-    .__item-name {}
+    // @include canvas();
+    background-color: $color3;
+
+
+
+    &__title {
+        @include title();
+    }
+    &__items {
+        @include container('box');
+        // margin-bottom: 56px;
+        padding-bottom: 56px;
+
+    }
+    &__item {
+
+        display: flex;
+        align-items: center;
+        width: 318px; 
+        height: 100px;
+        border-left: 1px solid rgb(242, 242, 242);
+        border-right: 1px solid rgb(242, 242, 242);
+        margin-bottom: 32px;
+        background-color: $color1;
+
+
+        &:hover {
+            background-color: $color8;
+            cursor: pointer;
+            color: $color1;
+        }
+        &:hover .services__item-ico {
+            display: none;
+        }
+        &:hover .services__item-ico--hover {
+            display: block;
+
+        }
+        &:hover .services__item-price {
+            display: block;
+        }
+
+
+
+
+    }
+    &__item-img {
+        margin: 0 32px;
+        width: 56px;
+
+    }
+    &__item-ico {
+        display: block;
+    }
+    &__item-ico--hover {
+        display: none;
+    }
+    &__item-name {
+        position: relative;
+    }
+    &__item-price {
+        display: none;
+        position: absolute;
+        &:after {
+            content: '\20BD';
+            margin-left: 5px;
+        }
+    }
 }
