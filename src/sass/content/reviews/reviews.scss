@@ -1,0 +1,48 @@
+.reviews-container {
+    @include wrap();
+}
+
+.reviews {
+
+    &__title {
+    	@include title();
+    }
+
+    &__button {
+        display: flex;
+        @include container('btn');
+        margin-bottom: 56px;
+        font-size: 12px;
+        justify-content: flex-start;
+    }
+
+    &__btn-review {
+        @include button(232px, 60px);
+        background-color: $color6;
+        color: $color1;
+        margin-right:32px;
+
+        &:hover {
+            background-color: $color7;
+            cursor: pointer;
+        }
+    }
+
+    &__btn-allreview {
+        @include button(230px, 58px);
+        border: 1px solid $color4;
+        color: $color2;
+
+        &:hover {
+            background-color: $color4;
+            cursor: pointer;
+        }
+    }
+}
+
+
+/* --- анимация */
+.reviews__title.an--active {@include animates('lightSpeedIn', 1.5s);} 
+.reviews__btn-review.an--active{@include animates('jackInTheBox', 1.5s);} 
+.reviews__btn-allreview.an--active{@include animates('jackInTheBox', 1.5s);} 
+

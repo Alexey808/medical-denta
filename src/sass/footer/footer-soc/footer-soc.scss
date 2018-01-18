@@ -1,0 +1,32 @@
+.footer-soc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 118px;
+    margin-left: 15px;
+
+    &__link {
+        padding: 5px;
+        display: inline-block;
+
+        &:hover .footer-soc__link-ico {
+            display: none;
+        }
+
+        &:hover .footer-soc__link-ico--hover {
+            display: flex;
+        }
+    }
+
+    &__link-ico {
+        display: flex;
+    }
+
+    &__link-ico--hover {
+        display: none;
+    }
+}
+
+/* --- анимация */
+.footer-soc__link-ico.an--active {@include animates('jello', .5s);} 
+

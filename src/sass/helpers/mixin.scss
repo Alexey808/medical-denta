@@ -1,40 +1,75 @@
 @mixin wrap() {
+
+
     max-width: 1024px;
-    min-width: 320px;
+    min-width: 395px;
     height: 100%;
+    padding: 0 15px;
+    position: relative;
     margin: 0 auto;
-    // padding: 0 10px;
-    // min-width: 1280px;
-    // max-width: 1920px;
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: center;
-    padding-left: 15px;
-    padding-right: 15px;
     
+    // max-width: 1024px;
+    // min-width: calc(100% - 30px);
+    // height: 100%;
+    // padding: 0 15px;
+
+    // padding-left: 15px; //**
+    // padding-right: 15px; //**
+    // margin: 0 15px;
+    // @media screen and (max-width: 960px) {
+    //     padding: 0;
+    //     margin: 0 15px;
+    // }
 }
-@mixin canvas() {
-    min-width: 1280px;
-    max-width: 1920px;
-}
+
 @mixin title() {
+    z-index: 10;
     padding: 56px 0 32px;
     font-family: $fonts-light;
     font-size: 32px;
-    color: $color8;
+    // color: $color8;
     font-weight: 300;
-    /*975*/
+    &-link {
+        color: $color8;
+        text-decoration: none;
+        outline: none;
+    }
     @media screen and (max-width: 1005px) {
-        text-align: center;
+        // text-align: center;
     }
 }
+@mixin button-arrow() {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.03);
+    }
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
 @mixin button($w, $h) {
     width: $w;
     height: $h;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform .3s;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.03);
+    }
+    &:active {
+        transform: scale(0.98);
+    }
 }
+
 @mixin container($x) {
     @if $x == 'btn' {
         @media screen and (max-width: 1005px) {
@@ -43,9 +78,7 @@
             /*всем дочерним классам содержащие в классе btn*/
             &>[class*=btn]{
                 margin: 5px;
-
             }
-
         }
     }
     @if $x == 'box' {
@@ -65,199 +98,113 @@
             justify-content: center;
         }
     }
-    @if $x == 'soc' {
-        
-    }
-}
-/* --- АНИМАЦИЯ ---------------------------------------- */
 
-/* --- bounceIn */
-@mixin an-bounceIn($duration) {
-    @keyframes bounceIn {
-        from, 20%, 40%, 60%, 80%, to {
-            animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-        }
-        0% {
-            opacity: 0;
-            transform: scale3d(.3, .3, .3);
-        }
-        20% {
-            transform: scale3d(1.1, 1.1, 1.1);
-        }
-        40% {
-            transform: scale3d(.9, .9, .9);
-        }
-        60% {
-            opacity: 1;
-            transform: scale3d(1.03, 1.03, 1.03);
-        }
-        80% {
-            transform: scale3d(.97, .97, .97);
-        }
-        to {
-            opacity: 1;
-            transform: scale3d(1, 1, 1);
-        }
-    }
-    animation-duration: $duration;
-    animation-name: bounceIn;
-}
-
-/* --- flipInX */
-@mixin an-flipInX($duration) {
-	@keyframes flipInX {
-	    from {
-	        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-	        animation-timing-function: ease-in;
-	        opacity: 0;
-	    }
-	    40% {
-	        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-	        animation-timing-function: ease-in;
-	    }
-	    60% {
-	        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-	        opacity: 1;
-	    }
-	    80% {
-	        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-	    }
-	    to {
-	        transform: perspective(400px);
-	    }
-	}
-
-    -webkit-backface-visibility: visible !important;
-    backface-visibility: visible !important;
-    animation-name: flipInX;
-    animation-duration: $duration;
-}
-
-/* --- lightSpeedIn */
-@mixin an-lightSpeedIn($duration) {
-	@keyframes lightSpeedIn {
-	  	from {
-	    	transform: translate3d(80%, 0, 0) skewX(-30deg);
-	    	opacity: 0;
-	  	}
-	  	60% {
-	    	transform: skewX(20deg);
-	    	opacity: 1;
-	  	}
-	  	80% {
-	    	transform: skewX(-5deg);
-	    	opacity: 1;
-	  	}
-	  	to {
-	    	transform: none;
-	    	opacity: 1;
-	  	}
-	}
-	animation-name: lightSpeedIn;
-	animation-timing-function: ease-out;
-	animation-duration: $duration;
-}
-
-/* --- rotateInUpLeft */
-@mixin an-rotateInUpLeft($duration) {
-    @keyframes rotateInUpLeft {
-        from {
-            transform-origin: left bottom;
-            transform: rotate3d(0, 0, 1, 45deg);
-            opacity: 0;
-        }
-
-        to {
-            transform-origin: left bottom;
-            transform: none;
-            opacity: 1;
-        }
-    }
-    animation-name: rotateInUpLeft;
-    animation-duration: $duration;
-}
-
-/* --- zoomIn */
-@mixin an-zoomIn($duration) {
-	@keyframes zoomIn {
-	  	from {
-	    	opacity: 0;
-	    	transform: scale3d(.3, .3, .3);
-	  	}
-	  	50% {
-	    	opacity: 1;
-	  	}
-	}
-	animation-name: zoomIn;
-	animation-duration: $duration;
-}
-
-/* --- jackInTheBox */
-@mixin an-jackInTheBox($duration) {
-    @keyframes jackInTheBox {
-        from {
-            opacity: 0;
-            transform: scale(0.1) rotate(30deg);
-            transform-origin: center bottom;
-        }
-        50% {
-            transform: rotate(-10deg);
-        }
-        70% {
-            transform: rotate(3deg);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-
-    animation-name: jackInTheBox;
-    animation-duration: $duration;
-}
-
-/* --- slideInDown */
-@mixin an-slideInDown($duration) {
-    @keyframes slideInDown {
-        from {
-            transform: translate3d(0, -100%, 0);
-            visibility: visible;
-        }
-
-        to {
-            transform: translate3d(0, 0, 0);
-        }
-    }
-    animation-name: slideInDown;
-    animation-duration: $duration;
 }
 
 
-/*
 
-@mixin container($x) {
-    @if $x == 'btn' {
-        @media screen and (max-width: 975px) {
+
+
+// @mixin media-hidden-elem($x) {
+//     @if $x == 'display-none' {
+//         @media screen and (max-width: 960px) {
+//             display: none;
+
+//         }
+//     }
+
+// }
+
+
+/* media-feedmack */
+@mixin media-feedback {
+    @media screen and (max-width: 960px) {
+
+        &__point-ico {
+            margin-right: 0px;
+        }
+
+        &__point {
+   
+            &:hover {
+                background-color: $color14;
+                border-radius: 4px;
+            }
+        }
+
+        &__point {
+            border: 1px solid #1a6152;
+            border-radius: 4px;
+            display: flex;
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
             justify-content: center;
         }
-    }
-    @if $x == 'box' {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
 
-        @media screen and (max-width: 980px) {
-            justify-content: space-around;
-            justify-content: space-evenly; 
-        }
-    }
-    @if $x == 'txt' {
-        justify-content: space-between;
-        @media screen and (max-width: 975px) {
-            flex-wrap: wrap;
+        &__point-link {
+            width: 100%;
+            height: 100%;
+            display: flex;
             justify-content: center;
+        }
+
+
+
+
+        &__point-tit {
+            display: none;
         }
     }
 }
 
- */
+/* слайдер */
+@mixin media-headslider {
+    @media screen and (max-width: 960px) {
+        &__ind {
+            bottom: 10px;
+        }
+        &__logo {
+            margin-right: 20px;
+        }
+    }
+
+    &__page-tit {
+        @media screen and (max-width: 960px) {
+            font-size: 3rem;
+        }
+        @media screen and (max-width: 600px) {
+            font-size: 2rem;
+        }
+    }
+}
+
+
+/* header */
+@mixin media-header {
+    @media screen and (max-width: 960px) {
+        &__nav { 
+            .nav-container {
+                margin: 0;
+            }
+        }
+
+        &__menu { 
+            justify-content: flex-start;
+            align-items: center;
+            height: calc(100% - 30px);
+        }
+
+        &__menu-link {
+            margin-right: 10px;
+            &--additional {
+                display: none;
+            }
+        }
+
+        &__menubar {
+            display: flex;
+            justify-content: baseline;
+        }
+    }
+}

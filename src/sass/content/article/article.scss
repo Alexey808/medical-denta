@@ -1,0 +1,38 @@
+.article-container {
+    @include wrap();
+}
+
+.article {
+    background-color: $color3;
+    padding-bottom: 56px;
+
+    &__title {
+    	@include title();
+    }
+    
+    &__items {
+        @include container('box');
+    }
+    
+    &__button {
+        @include button(320px, 60px);
+        border: 1px solid $color8;
+        color: $color2;
+        font-style: 12px;
+        margin: 0 auto;
+
+        &:hover {
+            background-color: $color8;
+            color: $color1;
+            cursor: pointer;
+        }
+    }
+}
+
+
+/* --- анимация */
+.article__title.an--active {@include animates('lightSpeedIn', 1.5s);} 
+.article__button.an--active {@include animates('jackInTheBox', 1.5s);} 
+
+
+
