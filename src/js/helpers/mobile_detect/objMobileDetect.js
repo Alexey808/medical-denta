@@ -8,12 +8,12 @@ md.setStyle = function(x) {
 }
 
 if (md.mobile() && md.phone()) {
-    console.log('run setStyle for mobile');
-    md.setStyle('css/m-index.css');
+    console.log('run mobile');
+    isScrolling = true;
 } else if (md.tablet()) {
-    console.log('run setStyle for tablet');
-    md.setStyle('css/t-index.css');
+    console.log('run tablet');
+    isScrolling = true;
 } else {
-    console.log('run setStyle for desktop');
-    md.setStyle('css/index.css');
+    console.log('run desktop');
+    isScrolling = false; //даём разрешение на запуск анимаций
 }

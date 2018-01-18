@@ -1,0 +1,27 @@
+.article-item {
+    background-color: $color1;
+    color: $color2;
+    border-left: 1px solid rgb(242, 242, 242);
+    border-right: 1px solid rgb(242, 242, 242);
+    font-size: 14px;
+    width: 318px;
+    margin-bottom: 32px;
+    
+    &__head {
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    &__head-img {
+        max-width: 100%;
+    }
+    
+    &__body {
+        margin: 32px;
+    }
+}
+
+
+/* --- анимация */
+
+.article-item__head-img.an--active {@include animates('pulse', 1.5s);} 

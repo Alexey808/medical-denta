@@ -1,0 +1,30 @@
+.footer-menu {
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__link {
+        line-height: 20px;
+        color: $color5;
+        text-decoration: none;
+        cursor: pointer;
+        
+        &:hover {
+            color: $color1;
+            text-shadow: 1px 1px 2px black, 0 0 5px $color1;
+        }
+
+        &:active {
+            text-decoration: underline;
+        }
+
+        &:not(:first-child) {
+            margin-left: 23px;
+        }
+    }
+}
+
+
+/* --- анимация */
+.footer-menu__link:hover{@include animates('jello', .5s);}

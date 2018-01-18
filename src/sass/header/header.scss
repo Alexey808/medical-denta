@@ -1,0 +1,113 @@
+.nav-container {
+    @include wrap();
+    position: relative;
+}
+
+.header {
+    height: 123px; /* 50+43+15+15*/
+    font-family: $fonts;
+    font-size: 12px;
+    position: sticky;
+    top: -50px;
+    z-index: 4;
+    
+    &__feedback {
+        color: $color1;
+        background-color: $color2;
+    }
+
+    &__nav {
+        display: flex;
+        font-size: 14px;
+        height: 73px;
+
+        .nav-container {
+            display: flex;
+            width: 100%;
+        }
+    }
+
+    &__menu {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 0;
+    }
+
+    &__menu-link {
+        color: $color1;
+        text-decoration: none;
+        display: flex;
+        
+        &:hover {
+            color: $color6;
+        }
+        
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &--basis {}
+
+        &--additional {}
+    }
+
+    &__logo {
+        margin-top: 15px;
+        margin-right: 32px;
+        display: inline-block;
+        float: left;
+    }
+
+    &__nav--color {
+        background-color: $color11;
+    }
+
+    &__menubar {
+        font-size: 0.9rem;
+        display: none;
+        &:hover > .header__menulist { 
+            visibility: visible;
+        }
+    }
+
+    &__menubar-ico {
+        width: 36px;
+        // padding: 0px 20px; //**
+        padding: 0px 10px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+
+    &__menulist {
+        visibility: hidden;
+        width: 232px;
+        position: absolute;
+        right: 15px;
+        top: 0;
+        background-color: $color13;
+    }
+
+    &__menubar-link {
+        color: $color1;
+        text-decoration: none;
+        display: flex;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+            color: $color6;
+            background-color: $color2;
+        }
+    }
+
+    @include media-header;
+
+}
+
+/* --- анимация */
+.header__menubar:hover > .header__menulist {animation: shows .3s ease-out forwards;}
+.header__nav--color {@include an-smoothTransitionColor(3s, $color11, $color12);}

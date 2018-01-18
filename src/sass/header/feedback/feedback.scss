@@ -1,0 +1,83 @@
+.feedback-container {
+    @include wrap();
+    position: relative;
+}
+
+.feedback {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 50px;
+  
+    &__point {
+        height: 20px;
+        margin: 15px 23px 15px 0;
+        display: flex;
+        align-items: center;
+
+        &:nth-last-child(2) {
+            margin-right: 2px;
+        }
+
+        &:first-child:hover .feedback__point-tit {
+            color: $color1;
+        }
+    }
+
+    &__point-tit {}
+
+    &__point-ico { 
+        margin-right: 16px;
+           
+    }
+
+    &__point-link {
+        color: $color1;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            color: $color8;
+        }
+    }
+    
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $color6;
+        width: 232px;
+        height: 50px;
+        margin-left: auto;
+
+        &:hover {
+            background-color: $color7;
+        }
+
+        &:hover {
+            cursor: pointer;
+        } 
+
+        &:hover .feedback__btn-ico {
+            display: none;
+        }
+
+        &:hover .feedback__btn-ico--hover {
+            display: flex;
+        }
+    }
+    
+    &__btn-ico {
+        margin-right: 16px;
+    }
+    
+    &__btn-ico--hover {
+        display: none;
+        margin-right: 16px;
+    }
+    
+    &__btn-name {}
+    
+    @include media-feedback; 
+}

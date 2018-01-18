@@ -1,0 +1,160 @@
+.aboutslider {
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    max-width: 1024px;
+    // min-width: 320px;
+    color: $color1;
+    font-family: $fonts;
+    padding: 0 15px;
+
+    &__pages {
+        height: inherit;
+        overflow: hidden;
+        position: relative;
+        width: inherit;
+    }
+
+    &__page {
+        height: inherit;
+        opacity: 0;
+        // position: absolute;
+        width: inherit;
+        z-index: 0;
+        display: block;
+    }
+
+    &__point1 {
+        // transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    }
+    &__point2 {
+        // transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    }
+    &__point3 {
+        // transition: transform ease-in-out .5s, opacity ease-in-out .5s; 
+    }
+
+    & > input {
+        display: none;
+    }
+
+    &__ind {
+        left: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    &__label {
+        cursor: pointer;
+        display: inline-block;
+        height: 10px;
+        margin: 0px 8px 0 0px;
+        position: relative;
+        width: 10px;
+        border-radius: 50%;
+        transition: background ease-in-out .3s;
+        top: -71px;
+        left: 47px;
+    }
+
+    &__label:after {
+        border: 2px solid #ddd;
+        content: " ";
+        display: block;
+        height: 8px;
+        left: -1px;
+        position: absolute;
+        top: -1px;
+        width: 8px;
+        border-radius: 50%;
+    }
+
+    &__wrap-btn {
+        height: 100%;
+        align-items: center;
+        position: absolute;
+        display: flex;
+        width: 15px;
+        z-index: 2;
+        &--left {
+            left: 15px;
+        }
+        &--right {
+            right: 37px;
+        }
+    } 
+
+    &__btn {
+        display: flex;
+        border: none;
+        background-color: rgba(0,0,0,0);
+        padding: 50px 10px;
+        transition: .3s;
+        outline: none;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(0,0,0,.3);
+            transform: scale(1.03);
+        }
+        &:active {
+            transform: scale(0.95);
+        }
+        &:hover &-ico {
+            display: none;
+        }
+        &:hover &-ico--hover {
+            display: flex;
+        }
+    }
+
+    &__btn-ico {
+        display: flex;
+    }
+    &__btn-ico--hover {
+        display: none;
+    }
+
+    &__page-tit{
+        @include title();
+        color: $color1;
+    }
+
+    &__page-ctn{
+        font-size: 18px;
+        font-weight: 100;
+        padding: 0 47px;
+        height: calc(100% - 240px);
+        line-height: 28px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+}
+
+#aboutslider__point1:checked ~ .aboutslider__pages > .aboutslider__point1,
+#aboutslider__point2:checked ~ .aboutslider__pages > .aboutslider__point2,
+#aboutslider__point3:checked ~ .aboutslider__pages > .aboutslider__point3 {
+    opacity: 1;
+    z-index: 1;
+    transform: scale(1);
+}
+.aboutslider .aboutslider__label:hover, 
+#aboutslider__point1:checked ~ .aboutslider__ind .aboutslider__label:nth-of-type(1),
+#aboutslider__point2:checked ~ .aboutslider__ind .aboutslider__label:nth-of-type(2),
+#aboutslider__point3:checked ~ .aboutslider__ind .aboutslider__label:nth-of-type(3) {
+    background: #ddd;
+}
+
+
+/* --- анимация */
+.aboutslider__page-tit.an--active {@include animates('lightSpeedIn', 1s);} 
+.aboutslider__page-ctn.an--active {@include animates('zoomIn', 1s);} 
+.aboutslider__wrap-btn--left.an--active {@include an-rotate(1s, -1.0turn);} 
+.aboutslider__wrap-btn--right.an--active {@include an-rotate(1s, 1.0turn);} 
+.aboutslider__ind.an--active{@include animates('zoomIn', 1s);} 
+
+.aboutslider__label[for="aboutslider__point1"].an--active{@include animates('zoomIn', 0.5s);} 
+.aboutslider__label[for="aboutslider__point2"].an--active{@include animates('zoomIn', 1.5s);} 
+.aboutslider__label[for="aboutslider__point3"].an--active{@include animates('zoomIn', 2.5s);}
+

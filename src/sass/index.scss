@@ -2,21 +2,34 @@
 @import "helpers/variables.scss";
 @import "helpers/fonts.scss";
 @import "helpers/mixin.scss";
+@import "helpers/mixin-animation.scss";
 @import "helpers/main.scss";
 
 /* --- header ------------------------------------------ */
+@import "header/header.scss";
+@import "header/feedback/feedback.scss";
 
-@import "desktop/header/header.scss";
+/* --- headslider ------------------------------------------ */
+@import "headslider/headslider.scss";
 
 
 /* --- content ----------------------------------------- */
+@import "content/content.scss";
 
-@import "desktop/content/content.scss";
-@import "desktop/content/services/services.scss";
-@import "desktop/content/about/about.scss";
-@import "desktop/content/article/article.scss";
-@import "desktop/content/reviews/reviews.scss";
+@import "content/services/services.scss";
+
+@import "content/about/about.scss";
+@import "content/about/aboutslider/aboutslider.scss";
+
+@import "content/article/article.scss";
+@import "content/article/article-item/article-item.scss";
+@import "content/article/article-item/article-body/article-body.scss";
+
+@import "content/reviews/reviews.scss";
+@import "content/reviews/reviews-box/reviews-box.scss";
+
 
 /* --- footer ------------------------------------------ */
-
-@import "desktop/footer/footer.scss";
+@import "footer/footer.scss";
+@import "footer/footer-menu/footer-menu.scss";
+@import "footer/footer-soc/footer-soc.scss";

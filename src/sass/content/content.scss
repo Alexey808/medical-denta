@@ -1,0 +1,7 @@
+.content-container {
+    @include wrap();
+}
+
+.content {
+    font-family: $fonts;
+}
