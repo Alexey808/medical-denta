@@ -1,27 +1,41 @@
 <section class="about">
-    <div class="about-slider">
-        <div class="about-slider__pages">
-            <div class="about-page about-page--active">
-                <h2 class="about-page__tit">О НАС</h2>
-                <div class="about-page__ctn">Стоматология "Инсаюр Медикал - Дента" была создана в 1995 году, и с самого начала существования ключевыми принципами нашей работы были формирование долгосрочных взаимоотношений с клиентами, решение их проблем как своих собственных.</div>
+    <div class="aboutslider">
+        <input type="radio" name="aboutslider-point" class="aboutslider__point" id="aboutslider__point1" checked="checked"/>
+        <input type="radio" name="aboutslider-point" class="aboutslider__point" id="aboutslider__point2"/>
+        <input type="radio" name="aboutslider-point" class="aboutslider__point" id="aboutslider__point3"/>
+
+        <div class="aboutslider__wrap-btn aboutslider__wrap-btn--left an">
+            <button class="aboutslider__btn" onclick="active_arrow('.aboutslider__point', 'left')">
+                <img src="img/svg/arrow-1st-screen-left.svg" class="aboutslider__btn-ico" alt="icon">
+                <img src="img/svg/arrow-green-left.svg" class="aboutslider__btn-ico aboutslider__btn-ico--hover" alt="icon">
+            </button>
+        </div>
+        <div class="aboutslider__wrap-btn aboutslider__wrap-btn--right an">
+            <button class="aboutslider__btn" onclick="active_arrow('.aboutslider__point', 'right')">
+                <img src="img/svg/arrow-1st-screen-right.svg" class="aboutslider__btn-ico" alt="icon">
+                <img src="img/svg/arrow-green-right.svg" class="aboutslider__btn-ico aboutslider__btn-ico--hover" alt="icon">
+            </button>
+        </div>
+        <div class="aboutslider__pages">
+            <div class="aboutslider__page aboutslider__point1">
+                <h2 class="aboutslider__page-tit an">О НАС</h2>
+                <div class="aboutslider__page-ctn an">Стоматология "Инсаюр Медикал - Дента" была создана в 1995 году, и с самого начала существования ключевыми принципами нашей работы были формирование долгосрочных взаимоотношений с клиентами, решение их проблем как своих собственных.</div>
             </div>
-            <div class="about-page">
-                <h2 class="about-page__tit">О НАС</h2>
-                <div class="about-page__ctn">Стоматология "Инсаюр Медикал - Дента" была создана в 1995 году, и с самого начала существования ключевыми принципами нашей работы были формирование долгосрочных взаимоотношений с клиентами, решение их проблем как своих собственных.</div>
+            <div class="aboutslider__page aboutslider__point2">
+                <h2 class="aboutslider__page-tit an">О НАС (2)</h2>
+                <div class="aboutslider__page-ctn an">Стоматология "Инсаюр Медикал - Дента" была создана в 1995 году, и с самого начала существования ключевыми принципами нашей работы были формирование долгосрочных взаимоотношений с клиентами, решение их проблем как своих собственных..</div>
             </div>
-            <div class="about-page">
-                <h2 class="about-page__tit">О НАС</h2>
-                <div class="about-page__ctn">Стоматология "Инсаюр Медикал - Дента" была создана в 1995 году, и с самого начала существования ключевыми принципами нашей работы были формирование долгосрочных взаимоотношений с клиентами, решение их проблем как своих собственных.</div>
+            <div class="aboutslider__page aboutslider__point3">
+                <h2 class="aboutslider__page-tit an">О НАС (3)</h2>
+                <div class="aboutslider__page-ctn an">Стоматология "Инсаюр Медикал - Дента" была создана в 1995 году, и с самого начала существования ключевыми принципами нашей работы были формирование долгосрочных взаимоотношений с клиентами, решение их проблем как своих собственных...</div>
             </div>
         </div>
-        <div class="about-slider__btn">
-            <img src="img/svg/arrow-1st-screen-left.svg" class="about-slider__btn-ico" alt="">
-            <img src="img/svg/arrow-1st-screen-right.svg" class="about-slider__btn-ico" alt="">
+
+        <div class="aboutslider__ind an">
+            <label class="aboutslider__label an" for="aboutslider__point1"></label>
+            <label class="aboutslider__label an" for="aboutslider__point2"></label>
+            <label class="aboutslider__label an" for="aboutslider__point3"></label>
         </div>
-        <div class="about-slider__ind">
-            <div class="about-slider__ind-dot about-slider__ind-dot--active"></div>
-            <div class="about-slider__ind-dot"></div>
-            <div class="about-slider__ind-dot"></div>
-        </div>
+
     </div>
 </section>

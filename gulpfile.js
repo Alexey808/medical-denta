@@ -38,9 +38,7 @@ var path = {
     },
     src: {
         html: 'src/**/*.html', 
-        // style: 'src/sass/index.scss',
         style: 'src/sass/*.scss',
-        // js: 'src/js/**/*.js',
         js: 'src/js/index.js',
         img: 'src/img/**/*.*'
     },
@@ -48,7 +46,7 @@ var path = {
         html: 'src/*.html',
         style: 'src/sass/**/*.scss',
         js: 'src/js/index.js',
-        img: 'src/img/*.*'
+        img: 'src/img/**/*.*'
     },
     clean: './build/*'
 };
@@ -98,7 +96,7 @@ gulp.task('style:build', ()=> {
         .pipe(sourceMaps.init())
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(autoprefixer({browsers: ['last 9 versions'], cascade: false}))
-        // .pipe(cleanCSS())
+        .pipe(cleanCSS())
         .pipe(sourceMaps.write())
         .pipe(gulp.dest(path.build.css))
         .pipe(browserSync.reload({stream: true})); 
@@ -108,7 +106,7 @@ gulp.task('style:build', ()=> {
 gulp.task('js:build', ()=> {
     gulp.src(path.src.js)
         .pipe(rigger())
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(concat('main.js'))
         .pipe(gulp.dest(path.build.js))
         .pipe(browserSync.reload({stream: true})); 
@@ -117,13 +115,8 @@ gulp.task('js:build', ()=> {
 // Сборка изображений ----------------------------------------------+
 gulp.task('image:build', ()=> {
     gulp.src(path.src.img)
-        // .pipe(imagemin({
-        //     progressive: true,
-        //     svgoPlugins: [{removeViewBox: false}],
-        //     //use: [pngquant()],
-        //     interlaced: true
-        // }))
-        .pipe(gulp.dest(path.build.img))
-        .pipe(browserSync.reload({stream: true})); 
+        .pipe(gulp.dest(path.build.img));
+        /*не успеваем собрать все картинки до reload. надо почитать*/
+        //.pipe(browserSync.reload({stream: true})); 
 });
 
