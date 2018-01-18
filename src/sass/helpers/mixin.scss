@@ -35,7 +35,7 @@
         outline: none;
     }
     @media screen and (max-width: 1005px) {
-        // text-align: center;
+        text-align: center;
     }
 }
 @mixin button-arrow() {
@@ -183,6 +183,7 @@
 /* header */
 @mixin media-header {
     @media screen and (max-width: 960px) {
+
         &__nav { 
             .nav-container {
                 margin: 0;
@@ -207,4 +208,12 @@
             justify-content: baseline;
         }
     }
+
+    // @media only screen and (max-width: 960px) and (orientation:landscape) {
+    //     position: unset;
+    // }
+
 }
+
+
+
