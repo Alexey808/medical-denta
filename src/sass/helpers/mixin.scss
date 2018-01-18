@@ -2,7 +2,7 @@
 
 
     max-width: 1024px;
-    min-width: 395px;
+    // min-width: 395px;
     height: 100%;
     padding: 0 15px;
     position: relative;
@@ -24,7 +24,7 @@
 
 @mixin title() {
     z-index: 10;
-    padding: 56px 0 32px;
+    padding: 50px 0 32px;
     font-family: $fonts-light;
     font-size: 32px;
     // color: $color8;
@@ -197,7 +197,7 @@
         }
 
         &__menu-link {
-            margin-right: 10px;
+            margin-right: 9px;
             &--additional {
                 display: none;
             }
@@ -206,6 +206,10 @@
         &__menubar {
             display: flex;
             justify-content: baseline;
+        }
+
+        &__logo {
+            margin-right: 15px;
         }
     }
 
