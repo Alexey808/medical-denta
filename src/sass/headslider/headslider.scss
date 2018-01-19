@@ -8,7 +8,8 @@
 }
 
 .headslider {
-    background: url("../img/1st-screen-1920x1080-dark.jpg") no-repeat;
+    background: url("../img/1st-screen-1920x1080-dark.jpg") no-repeat center center;
+    background-color: $color15;
     background-position-y: -45px;
     height: 670px;
     margin-top: -73px; /*высота навигации*/
@@ -68,7 +69,6 @@
         overflow: hidden;
         position: relative;
         width: inherit;
-        // padding: 0 46px; **
         margin: 0 46px;
     }
 

@@ -131,13 +131,11 @@
 /* слайдер */
 @mixin media-headslider {
 
-
-@media screen and (min-device-pixel-ratio: 1.5),
-       screen and (min-resolution: 144dpi) {
-            background: url("../img/ratina/1st-screen-1920x1080-dark.jpg") no-repeat;
+    @media screen and (min-device-pixel-ratio: 1.5),
+           screen and (min-resolution: 144dpi) {
+        background: url("../img/ratina/1st-screen@2x.jpg") no-repeat center center;
+        background-position-y: -334px;
     }
-
-
 
     @media screen and (max-width: 960px) {
         &__ind {
@@ -183,7 +181,7 @@
 
         &__menubar {
             display: flex;
-            justify-content: baseline;
+            // justify-content: baseline;
         }
 
         &__logo {
