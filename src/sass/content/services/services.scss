@@ -37,8 +37,11 @@
             display: none;
         }
 
+
+
         &:hover .services__item-ico--hover {
             display: block;
+            /**/
         }
 
         &:hover .services__item-price {
@@ -85,8 +88,12 @@
         &:active {
             transform: scale(0.97);
         }
+        &:hover .services__item-ico--hover {
+            @include animates('swing', 1.5s);
+        }
         &:hover .services__item-price {
             @include animates('bounce', 1.3s);
         }
     }
 }
+
