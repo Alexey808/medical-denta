@@ -3,7 +3,6 @@
     margin: 0 auto;
     position: relative;
     max-width: 1024px;
-    // min-width: 320px;
     color: $color1;
     font-family: $fonts;
     padding: 0 15px;
@@ -20,7 +19,6 @@
     &__page {
         height: inherit;
         opacity: 0;
-        // position: absolute;
         width: inherit;
         z-index: 0;
         display: block;

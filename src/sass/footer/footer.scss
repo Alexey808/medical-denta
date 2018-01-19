@@ -7,6 +7,7 @@
     font-family: $fonts;
     font-size: 14px;
     color: $color5;
+    flex: 0 0 115px;
 
     &__top {
         padding: 33px 0;
@@ -48,10 +49,13 @@
     &__bottom-link {
         color: $color5;
         cursor: pointer;
+        
         &:hover {
             color: $color1;
         }
     }
+
+
 }
 
 

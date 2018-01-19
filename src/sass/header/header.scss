@@ -74,7 +74,6 @@
 
     &__menubar-ico {
         width: 36px;
-        // padding: 0px 20px; //**
         padding: 0px 10px;
         &:hover {
             cursor: pointer;
@@ -102,6 +101,12 @@
             color: $color6;
             background-color: $color2;
         }
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        display: table;
     }
 
     @include media-header;
