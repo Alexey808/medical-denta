@@ -170,7 +170,7 @@ if (is_ie) {
     //полифил для ie 
     var elements = document.querySelectorAll('.header');
     Stickyfill.add(elements);
-} else if (md.mobile() && md.phone() && md.tablet()) {
+} else if ((md.mobile() && md.phone()) || md.tablet()) {
 	isScrolling = true;
 } else {
 	isScrolling = false; //даём разрешение на запуск анимаций
