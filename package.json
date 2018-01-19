@@ -1,5 +1,5 @@
 {
-  "name": "hw2",
+  "name": "medical-denta",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "server": "gulp server watch"
   },
   "keywords": [],
-  "author": "",
+  "author": "laiten808@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.13",
