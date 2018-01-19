@@ -12,7 +12,6 @@
         overflow: hidden;
         position: relative;
         width: inherit;
-
         margin: 0 60px; /**/
     }
 
@@ -22,7 +21,8 @@
         width: inherit;
         z-index: 0;
         display: block;
-
+        position: absolute;
+        width: 100%;
     }
 
     &__point1 {
