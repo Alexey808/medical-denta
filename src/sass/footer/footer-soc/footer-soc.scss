@@ -30,3 +30,11 @@
 /* --- анимация */
 .footer-soc__link-ico.an--active {@include animates('jello', .5s);} 
 
+.footer-soc {
+    &__link {
+        &:hover .footer-soc__link-ico--hover {
+            display: flex;
+            @include animates('jello', .5s);
+        }
+    }
+}
