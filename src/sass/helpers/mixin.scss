@@ -1,43 +1,28 @@
 @mixin wrap() {
-
-
     max-width: 1024px;
-    min-width: 395px;
     height: 100%;
     padding: 0 15px;
     position: relative;
     margin: 0 auto;
-    
-    // max-width: 1024px;
-    // min-width: calc(100% - 30px);
-    // height: 100%;
-    // padding: 0 15px;
-
-    // padding-left: 15px; //**
-    // padding-right: 15px; //**
-    // margin: 0 15px;
-    // @media screen and (max-width: 960px) {
-    //     padding: 0;
-    //     margin: 0 15px;
-    // }
 }
 
 @mixin title() {
     z-index: 10;
-    padding: 56px 0 32px;
+    padding: 50px 0 32px;
     font-family: $fonts-light;
     font-size: 32px;
-    // color: $color8;
     font-weight: 300;
     &-link {
         color: $color8;
         text-decoration: none;
         outline: none;
     }
+    
     @media screen and (max-width: 1005px) {
-        // text-align: center;
+        text-align: center;
     }
 }
+
 @mixin button-arrow() {
     flex-shrink: 0;
     display: flex;
@@ -47,10 +32,11 @@
 
     &:hover {
         cursor: pointer;
-        transform: scale(1.03);
+        transform: scale(1.015);
     }
+    
     &:active {
-        transform: scale(0.95);
+        transform: scale(0.985);
     }
 }
 
@@ -61,12 +47,14 @@
     justify-content: center;
     align-items: center;
     transition: transform .3s;
+    
     &:hover {
         cursor: pointer;
-        transform: scale(1.03);
+        transform: scale(1.015);
     }
+
     &:active {
-        transform: scale(0.98);
+        transform: scale(0.985);
     }
 }
 
@@ -98,22 +86,7 @@
             justify-content: center;
         }
     }
-
 }
-
-
-
-
-
-// @mixin media-hidden-elem($x) {
-//     @if $x == 'display-none' {
-//         @media screen and (max-width: 960px) {
-//             display: none;
-
-//         }
-//     }
-
-// }
 
 
 /* media-feedmack */
@@ -149,9 +122,6 @@
             justify-content: center;
         }
 
-
-
-
         &__point-tit {
             display: none;
         }
@@ -160,6 +130,15 @@
 
 /* слайдер */
 @mixin media-headslider {
+
+
+@media screen and (min-device-pixel-ratio: 1.5),
+       screen and (min-resolution: 144dpi) {
+            background: url("../img/ratina/1st-screen-1920x1080-dark.jpg") no-repeat;
+    }
+
+
+
     @media screen and (max-width: 960px) {
         &__ind {
             bottom: 10px;
@@ -183,12 +162,12 @@
 /* header */
 @mixin media-header {
     @media screen and (max-width: 960px) {
+
         &__nav { 
             .nav-container {
                 margin: 0;
             }
         }
-
         &__menu { 
             justify-content: flex-start;
             align-items: center;
@@ -196,7 +175,7 @@
         }
 
         &__menu-link {
-            margin-right: 10px;
+            margin-right: 9px;
             &--additional {
                 display: none;
             }
@@ -206,5 +185,35 @@
             display: flex;
             justify-content: baseline;
         }
+
+        &__logo {
+            margin-right: 15px;
+        }
+    }
+    
+    // @media only screen and (max-width: 960px) and (orientation:landscape) {
+    //     position: unset;
+    // }
+
+}
+
+@mixin media-footer-menu {
+
+    @media screen and (max-width: 1005px) {
+        &__cul {
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 25%;
+        }
+    }
+
+    @media screen and (max-width: 780px) {
+        &__cul {
+            flex-direction: column;
+            flex: 0 0 50%;
+
+        }
     }
 }
+
+

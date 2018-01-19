@@ -106,7 +106,7 @@ gulp.task('style:build', ()=> {
 gulp.task('js:build', ()=> {
     gulp.src(path.src.js)
         .pipe(rigger())
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(concat('main.js'))
         .pipe(gulp.dest(path.build.js))
         .pipe(browserSync.reload({stream: true})); 

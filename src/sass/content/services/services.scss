@@ -7,12 +7,13 @@
 
     &__title {
         @include title();
+        padding: 50px 0 26px;
 
     }
 
     &__items {
         @include container('box');
-        padding-bottom: 56px;
+        padding-bottom: 25px;
     }
 
     &__item {
