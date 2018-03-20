@@ -121,46 +121,43 @@
     <!-- /header -->
     
     <!-- главный слайдер -->
-    <div class="headslider">
+    <div id="headslider" class="headslider">
         <div class="headslider-container">
-            <input type="radio" name="headslider-point" class="headslider__point" id="headslider__point1" checked="checked"/>
-            <input type="radio" name="headslider-point" class="headslider__point" id="headslider__point2">
-            <input type="radio" name="headslider-point" class="headslider__point" id="headslider__point3">
 
-            <div class="headslider__wrap-btn headslider__wrap-btn--left an">
-                <button class="headslider__btn" onclick="active_arrow('.headslider__point', 'left')">
-                    <img src="img/svg/arrow-1st-screen-left.svg" class="headslider__btn-ico" alt="icon">
-                    <img src="img/svg/arrow-green-left.svg" class="headslider__btn-ico headslider__btn-ico--active" alt="icon">
-                </button>
-            </div>
-            <div class="headslider__wrap-btn headslider__wrap-btn--right an">
-                <button class="headslider__btn" onclick="active_arrow('.headslider__point', 'right')">
-                    <img src="img/svg/arrow-1st-screen-right.svg" class="headslider__btn-ico" alt="icon">
-                    <img src="img/svg/arrow-green-right.svg" class="headslider__btn-ico headslider__btn-ico--active" alt="icon">
-                </button>
-            </div>
-            <div class="headslider__pages">
-                <div class="headslider__page headslider__point1 an">
+            <button class="headslider__btn headslider__btn--left">
+                <img src="img/svg/arrow-1st-screen-left.svg" class="headslider__btn-ico" alt="icon">
+                <img src="img/svg/arrow-green-left.svg" class="headslider__btn-ico headslider__btn-ico--active" alt="icon">
+            </button>
+     
+
+            <button class="headslider__btn headslider__btn--right">
+                <img src="img/svg/arrow-1st-screen-right.svg" class="headslider__btn-ico" alt="icon">
+                <img src="img/svg/arrow-green-right.svg" class="headslider__btn-ico headslider__btn-ico--active" alt="icon">
+            </button>
+         
+
+            <div class="headslider__box">
+                <div class="headslider__page active an">
                     <h2 class="headslider__page-tit an">20% СКИДКА <br> НА ЛЕЧЕНИЕ ЗУБОВ</h2>
                     <div class="headslider__page-date an">C 9 по 15 октября</div>
                     <div class="headslider__page-btn an">ПОСМОТРЕТЬ ПОДРОБНЕЕ</div>
                 </div>
-                <div class="headslider__page headslider__point2">
-                    <h2 class="headslider__page-tit an">30% СКИДКА <br> НА ЛЕЧЕНИЕ ЗУБОВ</h2>
-                    <div class="headslider__page-date an">C 16 по 20 октября</div>
-                    <div class="headslider__page-btn an">ПОСМОТРЕТЬ ПОДРОБНЕЕ</div>
+                <div class="headslider__page">
+                    <h2 class="headslider__page-tit">30% СКИДКА <br> НА ЛЕЧЕНИЕ ЗУБОВ</h2>
+                    <div class="headslider__page-date">C 16 по 20 октября</div>
+                    <div class="headslider__page-btn">ПОСМОТРЕТЬ ПОДРОБНЕЕ</div>
                 </div>
-                <div class="headslider__page headslider__point3">
-                    <h2 class="headslider__page-tit an">50% СКИДКА <br> НА УДАЛЕНИЕ ЗУБОВ</h2>
-                    <div class="headslider__page-date an">C 21 по 28 октября</div>
-                    <div class="headslider__page-btn an">ПОСМОТРЕТЬ ПОДРОБНЕЕ</div>
+                <div class="headslider__page">
+                    <h2 class="headslider__page-tit">50% СКИДКА <br> НА УДАЛЕНИЕ ЗУБОВ</h2>
+                    <div class="headslider__page-date">C 21 по 28 октября</div>
+                    <div class="headslider__page-btn">ПОСМОТРЕТЬ ПОДРОБНЕЕ</div>
                 </div>
             </div>
 
             <div class="headslider__ind an">
-                <label class="headslider__label an" for="headslider__point1"></label>
-                <label class="headslider__label an" for="headslider__point2"></label>
-                <label class="headslider__label an" for="headslider__point3"></label>
+                <div class="headslider__dot active"></div>
+                <div class="headslider__dot"></div>
+                <div class="headslider__dot"></div>
             </div>
 
             <div class="headslider__arrowdown an">
@@ -168,6 +165,7 @@
                     <img src="img/svg/arrow-1st-screen-down.svg" class="headslider__arrowdown-ico" alt="icon">
                 </a>
             </div>
+            
         </div>
     </div>
     <!-- /главный слайдер -->

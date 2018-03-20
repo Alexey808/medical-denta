@@ -28,7 +28,7 @@
 }
 
 /* --- анимация */
-.footer-soc__link-ico.an--active {@include animates('jello', .5s);} 
+.footer-soc__link-ico.an--run {@include animates('jello', .5s);} 
 
 .footer-soc {
     &__link {

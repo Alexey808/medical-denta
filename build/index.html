@@ -121,46 +121,43 @@
     <!-- /header -->
     
     <!-- главный слайдер -->
-    <div class="headslider">
+    <div id="headslider" class="headslider">
         <div class="headslider-container">
-            <input type="radio" name="headslider-point" class="headslider__point" id="headslider__point1" checked="checked"/>
-            <input type="radio" name="headslider-point" class="headslider__point" id="headslider__point2">
-            <input type="radio" name="headslider-point" class="headslider__point" id="headslider__point3">
 
-            <div class="headslider__wrap-btn headslider__wrap-btn--left an">
-                <button class="headslider__btn" onclick="active_arrow('.headslider__point', 'left')">
-                    <img src="img/svg/arrow-1st-screen-left.svg" class="headslider__btn-ico" alt="icon">
-                    <img src="img/svg/arrow-green-left.svg" class="headslider__btn-ico headslider__btn-ico--active" alt="icon">
-                </button>
-            </div>
-            <div class="headslider__wrap-btn headslider__wrap-btn--right an">
-                <button class="headslider__btn" onclick="active_arrow('.headslider__point', 'right')">
-                    <img src="img/svg/arrow-1st-screen-right.svg" class="headslider__btn-ico" alt="icon">
-                    <img src="img/svg/arrow-green-right.svg" class="headslider__btn-ico headslider__btn-ico--active" alt="icon">
-                </button>
-            </div>
-            <div class="headslider__pages">
-                <div class="headslider__page headslider__point1 an">
+            <button class="headslider__btn headslider__btn--left">
+                <img src="img/svg/arrow-1st-screen-left.svg" class="headslider__btn-ico" alt="icon">
+                <img src="img/svg/arrow-green-left.svg" class="headslider__btn-ico headslider__btn-ico--active" alt="icon">
+            </button>
+     
+
+            <button class="headslider__btn headslider__btn--right">
+                <img src="img/svg/arrow-1st-screen-right.svg" class="headslider__btn-ico" alt="icon">
+                <img src="img/svg/arrow-green-right.svg" class="headslider__btn-ico headslider__btn-ico--active" alt="icon">
+            </button>
+         
+
+            <div class="headslider__box">
+                <div class="headslider__page active an">
                     <h2 class="headslider__page-tit an">20% СКИДКА <br> НА ЛЕЧЕНИЕ ЗУБОВ</h2>
                     <div class="headslider__page-date an">C 9 по 15 октября</div>
                     <div class="headslider__page-btn an">ПОСМОТРЕТЬ ПОДРОБНЕЕ</div>
                 </div>
-                <div class="headslider__page headslider__point2">
-                    <h2 class="headslider__page-tit an">30% СКИДКА <br> НА ЛЕЧЕНИЕ ЗУБОВ</h2>
-                    <div class="headslider__page-date an">C 16 по 20 октября</div>
-                    <div class="headslider__page-btn an">ПОСМОТРЕТЬ ПОДРОБНЕЕ</div>
+                <div class="headslider__page">
+                    <h2 class="headslider__page-tit">30% СКИДКА <br> НА ЛЕЧЕНИЕ ЗУБОВ</h2>
+                    <div class="headslider__page-date">C 16 по 20 октября</div>
+                    <div class="headslider__page-btn">ПОСМОТРЕТЬ ПОДРОБНЕЕ</div>
                 </div>
-                <div class="headslider__page headslider__point3">
-                    <h2 class="headslider__page-tit an">50% СКИДКА <br> НА УДАЛЕНИЕ ЗУБОВ</h2>
-                    <div class="headslider__page-date an">C 21 по 28 октября</div>
-                    <div class="headslider__page-btn an">ПОСМОТРЕТЬ ПОДРОБНЕЕ</div>
+                <div class="headslider__page">
+                    <h2 class="headslider__page-tit">50% СКИДКА <br> НА УДАЛЕНИЕ ЗУБОВ</h2>
+                    <div class="headslider__page-date">C 21 по 28 октября</div>
+                    <div class="headslider__page-btn">ПОСМОТРЕТЬ ПОДРОБНЕЕ</div>
                 </div>
             </div>
 
             <div class="headslider__ind an">
-                <label class="headslider__label an" for="headslider__point1"></label>
-                <label class="headslider__label an" for="headslider__point2"></label>
-                <label class="headslider__label an" for="headslider__point3"></label>
+                <div class="headslider__dot active"></div>
+                <div class="headslider__dot"></div>
+                <div class="headslider__dot"></div>
             </div>
 
             <div class="headslider__arrowdown an">
@@ -168,6 +165,7 @@
                     <img src="img/svg/arrow-1st-screen-down.svg" class="headslider__arrowdown-ico" alt="icon">
                 </a>
             </div>
+            
         </div>
     </div>
     <!-- /главный слайдер -->
@@ -245,42 +243,37 @@
 
             <!-- about -->
             <section class="about">
-                <div class="aboutslider">
-                    <input type="radio" name="aboutslider-point" class="aboutslider__point" id="aboutslider__point1" checked="checked"/>
-                    <input type="radio" name="aboutslider-point" class="aboutslider__point" id="aboutslider__point2"/>
-                    <input type="radio" name="aboutslider-point" class="aboutslider__point" id="aboutslider__point3"/>
+                <div id="aboutslider" class="aboutslider">
             
-                    <div class="aboutslider__wrap-btn aboutslider__wrap-btn--left an">
-                        <button class="aboutslider__btn" onclick="active_arrow('.aboutslider__point', 'left')">
-                            <img src="img/svg/arrow-1st-screen-left.svg" class="aboutslider__btn-ico" alt="icon">
-                            <img src="img/svg/arrow-green-left.svg" class="aboutslider__btn-ico aboutslider__btn-ico--hover" alt="icon">
-                        </button>
-                    </div>
-                    <div class="aboutslider__wrap-btn aboutslider__wrap-btn--right an">
-                        <button class="aboutslider__btn" onclick="active_arrow('.aboutslider__point', 'right')">
-                            <img src="img/svg/arrow-1st-screen-right.svg" class="aboutslider__btn-ico" alt="icon">
-                            <img src="img/svg/arrow-green-right.svg" class="aboutslider__btn-ico aboutslider__btn-ico--hover" alt="icon">
-                        </button>
-                    </div>
-                    <div class="aboutslider__pages">
-                        <div class="aboutslider__page aboutslider__point1">
+                    <button class="aboutslider__btn aboutslider__btn--left">
+                        <img src="img/svg/arrow-1st-screen-left.svg" class="aboutslider__btn-ico" alt="icon">
+                        <img src="img/svg/arrow-green-left.svg" class="aboutslider__btn-ico aboutslider__btn-ico--hover" alt="icon">
+                    </button>
+            
+                    <button class="aboutslider__btn aboutslider__btn--right">
+                        <img src="img/svg/arrow-1st-screen-right.svg" class="aboutslider__btn-ico" alt="icon">
+                        <img src="img/svg/arrow-green-right.svg" class="aboutslider__btn-ico aboutslider__btn-ico--hover" alt="icon">
+                    </button>
+                
+                    <div class="aboutslider__box">
+                        <div class="aboutslider__page active">
                             <h2 class="aboutslider__page-tit an">О НАС</h2>
                             <div class="aboutslider__page-ctn an">Стоматология "Инсаюр Медикал - Дента" была создана в 1995 году, и с самого начала существования ключевыми принципами нашей работы были формирование долгосрочных взаимоотношений с клиентами, решение их проблем как своих собственных.</div>
                         </div>
-                        <div class="aboutslider__page aboutslider__point2">
+                        <div class="aboutslider__page">
                             <h2 class="aboutslider__page-tit an">О НАС (2)</h2>
                             <div class="aboutslider__page-ctn an">Стоматология "Инсаюр Медикал - Дента" была создана в 1995 году, и с самого начала существования ключевыми принципами нашей работы были формирование долгосрочных взаимоотношений с клиентами, решение их проблем как своих собственных..</div>
                         </div>
-                        <div class="aboutslider__page aboutslider__point3">
+                        <div class="aboutslider__page">
                             <h2 class="aboutslider__page-tit an">О НАС (3)</h2>
                             <div class="aboutslider__page-ctn an">Стоматология "Инсаюр Медикал - Дента" была создана в 1995 году, и с самого начала существования ключевыми принципами нашей работы были формирование долгосрочных взаимоотношений с клиентами, решение их проблем как своих собственных...</div>
                         </div>
                     </div>
             
                     <div class="aboutslider__ind an">
-                        <label class="aboutslider__label an" for="aboutslider__point1"></label>
-                        <label class="aboutslider__label an" for="aboutslider__point2"></label>
-                        <label class="aboutslider__label an" for="aboutslider__point3"></label>
+                        <div class="aboutslider__dot active"></div>
+                        <div class="aboutslider__dot"></div>
+                        <div class="aboutslider__dot"></div>
                     </div>
             
                 </div>
@@ -289,35 +282,41 @@
 
 
             <!-- reviews -->
-            <section class="reviews">
+            <section id="reviews" class="reviews">
                 <div class="reviews-container">
                     <h2 class="reviews__title an"><a href="#" class="reviews__title-link" name="reviews">ОТЗЫВЫ О НАШЕЙ РАБОТЕ</a></h2>
             
-                    <div class="reviews-box">
-                        <div class="reviews-box__arrow" onclick="next_pages('.reviews-box__item', 'left')">
-                            <img src="img/svg/arrow-green-left.svg" class="reviews-box__arrow-ico reviews-box__arrow-ico--left an" alt="icon">
-                        </div>
-                        <div class="reviews-box__item reviews-box__item--active an">
+            
+                    <button class="reviews__btn reviews__btn--left">
+                        <img src="img/svg/arrow-green-left.svg" class="reviews__btn-ico an" alt="icon">
+                    </button>
+            
+                    <div class="reviews__box">
+                        <div class="reviews__page active an">
                             «Лечение кариеса проводится с использованием особо «щадящих» технологий. В расположении врача имеется необходимый набор современных инструментов, с помощью которых врач тщательно обрабатывает полость зуба, снимая пораженные ткани»
-                            <div class="reviews-box__content-author">Светлана Сорокина</div> 
+                            <div class="reviews__page-author">Светлана Сорокина</div> 
                         </div>
-                        <div class="reviews-box__item an">
+                        <div class="reviews__page">
                             «Лечение кариеса проводится с использованием особо «щадящих» технологий. В расположении врача имеется необходимый набор современных инструментов, с помощью которых врач тщательно обрабатывает полость зуба, снимая пораженные ткани» .
-                            <div class="reviews-box__content-author">Анатолий Анатольич</div> 
+                            <div class="reviews__page-author">Анатолий Анатольич</div> 
                         </div>
-                        <div class="reviews-box__item an">
+                        <div class="reviews__page">
                             «Лечение кариеса проводится с использованием особо «щадящих» технологий. В расположении врача имеется необходимый набор современных инструментов, с помощью которых врач тщательно обрабатывает полость зуба, снимая пораженные ткани» ..
-                            <div class="reviews-box__content-author">Виктор Викторович</div> 
+                            <div class="reviews__page-author">Виктор Викторович</div> 
                         </div>
-                        <div class="reviews-box__arrow" onclick="next_pages('.reviews-box__item', 'right')">
-                            <img src="img/svg/arrow-green-right.svg" class="reviews-box__arrow-ico reviews-box__arrow-ico--right an" alt="icon">
-                        </div>
+            
                     </div>
             
-                    <div class="reviews__button">
-                        <div class="reviews__btn-review an">НАПИСАТЬ ОТЗЫВ</div>
-                        <div class="reviews__btn-allreview an">ПРОСМОТРЕТЬ ВСЕ ОТЗЫВЫ</div>
+                    <button class="reviews__btn reviews__btn--right">
+                        <img src="img/svg/arrow-green-right.svg" class="reviews__btn-ico an" alt="icon">
+                    </button>
+               
+            
+                    <div class="reviews__buttons">
+                        <div class="reviews__buttons-review an">НАПИСАТЬ ОТЗЫВ</div>
+                        <div class="reviews__buttons-allreview an">ПРОСМОТРЕТЬ ВСЕ ОТЗЫВЫ</div>
                     </div>
+            
                 </div>
             </section>
             <!-- /reviews -->

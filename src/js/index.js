@@ -4,14 +4,18 @@
 
 
 // --- other
+//= helpers/sliderInit.js
+//= helpers/catchEventScroll.js
+//= helpers/floatColorMenu.js
+
 var isScrolling; //получает значение из objMobileDetect для catchEventScroll
 var md = new MobileDetect(window.navigator.userAgent);
 
+var headslider = new slider('headslider');
+var aboutslider = new slider('aboutslider');
+var reviews = new slider('reviews');
 
-//= helpers/catchEventScroll.js
-//= helpers/floatColorMenu.js
-//= helpers/reviewsNextPages.js
-//= helpers/slideArrrowBtn.js
+
 
 
 //проверка на IE

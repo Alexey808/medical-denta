@@ -60,6 +60,6 @@
 
 
 /* --- анимация */
-.footer__top.an--active {@include animates('zoomIn', 1.5s);} 
+.footer__top.an--run {@include animates('zoomIn', 1.5s);} 
 // .footer__bottom-link.footer__bottom-link {@include animates('tada', 1.5s);}
-.footer__bottom-point.an--active {@include animates('tada', 1.5s);}
+.footer__bottom-point.an--run {@include animates('tada', 1.5s);}

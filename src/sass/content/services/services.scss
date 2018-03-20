@@ -78,10 +78,10 @@
 
 
 /* --- анимация */
-.services__title.an--active {@include animates('lightSpeedIn', 1.5s);} 
-.services__item.an--active {@include animates('jackInTheBox', 1.5s);} 
-.services__item-name.an--active {@include animates('lightSpeedIn', 1s);} 
-.services__item-ico.an--active {@include animates('swing', 1.5s);} 
+.services__title.an--run {@include animates('lightSpeedIn', 1.5s);} 
+.services__item.an--run {@include animates('jackInTheBox', 1.5s);} 
+.services__item-name.an--run {@include animates('lightSpeedIn', 1s);} 
+.services__item-ico.an--run {@include animates('swing', 1.5s);} 
 
 .services {
     &__item {

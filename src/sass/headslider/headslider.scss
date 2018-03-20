@@ -15,81 +15,66 @@
     margin-top: -73px; /*высота навигации*/
     color: $color1;
     font-family: $fonts;
-    
-    & .headslider-container > input {
-        display: none;
-    }
 
     &__ind {
-        left: 18px;
+        left: 62px;
         position: absolute;
         z-index: 1;
         bottom: 76px;
     }
 
-    &__point1 {
-        transition: transform ease-in-out .5s, opacity ease-in-out .5s;
-    }
-
-    &__point2 {
-        transition: transform ease-in-out .5s, opacity ease-in-out .5s;
-    }
-
-    &__point3 {
-        transition: transform ease-in-out .5s, opacity ease-in-out .5s;
-    }
-
-    .headslider__label {
-        cursor: pointer;
-        display: inline-block;
-        height: 10px;
-        margin: 0px 5px 0 0px;
-        position: relative;
-        width: 10px;
-        border-radius: 50%;
-        transition: background ease-in-out .5s;
-        top: -71px;
-        left: 47px;
-    }
-
-    .headslider__label:after {
+    .headslider__dot {
         border: 2px solid $color1;
-        content: " ";
-        display: block;
+        display: inline-block;
         height: 8px;
-        left: -1px;
-        position: absolute;
-        top: -1px;
+        margin: 0px 5px 0 0px;
         width: 8px;
         border-radius: 50%;
+        transition: background ease-in-out .5s;
+        cursor: pointer;
+
+        &.active {
+            background-color: $color1; 
+        }
     }
 
-    &__pages {
+    &__box {
         height: inherit;
-        overflow: hidden;
         position: relative;
         width: inherit;
         margin: 0 46px;
     }
 
     &__page {
-        height: inherit;
-        opacity: 0;
-        position: absolute;
-        width: inherit;
-        z-index: 0;
         width: calc(100% - 92px); /* - ширина боковых кнопок 46 46 */
         height: 100%;
+        opacity: 0;
+        position: absolute;
+        z-index: 0;
+        transform: scale(1.08, 1);
+        transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+
+        &.active {
+            opacity: 1;
+            z-index: 1;
+            transform: scale(1);
+        }
     }
 
-    &__wrap-btn {
+
+    &__btn {
         height: 100%;
         position: absolute;
-        display: flex;
         z-index: 2;
         align-items: center;
-        top: 165px;
-        height: 100px;
+        top: 155px;
+        height: auto;
+        display: flex;
+        border: none;
+        background-color: rgba(0,0,0,0);
+        padding: 50px 10px;
+        transition: .3s;
+        outline: none;
 
         &--left {
             left: 5px;
@@ -98,15 +83,6 @@
         &--right {
             right: 5px;
         }
-    } 
-
-    &__btn {
-        display: flex;
-        border: none;
-        background-color: rgba(0,0,0,0);
-        padding: 50px 10px;
-        transition: .3s;
-        outline: none;
 
         &:hover {
             cursor: pointer;
@@ -166,47 +142,20 @@
         z-index: 1;
     }
 
+    
     @include media-headslider;
-}
-
-#headslider__point1:checked ~ .headslider__pages > .headslider__point1,
-#headslider__point2:checked ~ .headslider__pages > .headslider__point2,
-#headslider__point3:checked ~ .headslider__pages > .headslider__point3 {
-    opacity: 1;
-    z-index: 1;
-    transform: scale(1);
-}
-
-.headslider.headslider__label:hover, 
-#headslider__point1:checked ~ .headslider__ind .headslider__label:nth-of-type(1),
-#headslider__point2:checked ~ .headslider__ind .headslider__label:nth-of-type(2),
-#headslider__point3:checked ~ .headslider__ind .headslider__label:nth-of-type(3) {
-    background: $color1;
 }
 
 
 
 /* --- анимация */
-// .headslider__page-tit.an--active {@include animates('zoomIn', 1s);} 
-// .headslider__page-date.an--active {@include animates('lightSpeedIn', 1.5s);} 
-// .headslider__wrap-btn--left.an--active {@include an-rotate(1s, -1.0turn);} 
-// .headslider__wrap-btn--right.an--active {@include an-rotate(1s, 1.0turn);}
-// .headslider__page-btn.an--active {@include animates('jackInTheBox', 1s);}
-// .headslider__arrowdown.an--active{@include animates('swing', 1s);} 
-// .headslider__ind.an--active{@include animates('zoomIn', 1s);} 
 
-.headslider__page-tit.an {@include animates('zoomIn', 1s);} 
-.headslider__page-date.an {@include animates('lightSpeedIn', 1.5s);} 
-.headslider__wrap-btn--left.an {@include animates('zoomIn', 1.5s);} 
-.headslider__wrap-btn--right.an {@include animates('zoomIn', 1.5s);}
-.headslider__page-btn.an {@include animates('jackInTheBox', 1s);}
-.headslider__arrowdown.an {@include animates('swing', 1s);} 
-.headslider__ind.an {@include animates('zoomIn', 1s);} 
+// .headslider__page-tit.an--run {@include animates('zoomIn', 1s);} 
+// .headslider__page-date.an--run {@include animates('lightSpeedIn', 1.5s);} 
+// .headslider__page-btn.an--run {@include animates('jackInTheBox', 1s);}
+// .headslider__arrowdown.an--run {@include animates('swing', 1s);} 
+// .headslider__ind.an--run {@include animates('zoomIn', 1s);} 
 
-
-.headslider__label[for="headslider__point1"].an{@include animates('zoomIn', 0.5s);} 
-.headslider__label[for="headslider__point2"].an{@include animates('zoomIn', 1.5s);} 
-.headslider__label[for="headslider__point3"].an{@include animates('zoomIn', 2.5s);} 
 
 
 
