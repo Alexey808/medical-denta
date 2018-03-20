@@ -1,31 +1,37 @@
-<section class="reviews">
+<section id="reviews" class="reviews">
     <div class="reviews-container">
         <h2 class="reviews__title an"><a href="#" class="reviews__title-link" name="reviews">ОТЗЫВЫ О НАШЕЙ РАБОТЕ</a></h2>
 
-        <div class="reviews-box">
-            <div class="reviews-box__arrow" onclick="next_pages('.reviews-box__item', 'left')">
-                <img src="img/svg/arrow-green-left.svg" class="reviews-box__arrow-ico reviews-box__arrow-ico--left an" alt="icon">
-            </div>
-            <div class="reviews-box__item reviews-box__item--active an">
+
+        <button class="reviews__btn reviews__btn--left">
+            <img src="img/svg/arrow-green-left.svg" class="reviews__btn-ico an" alt="icon">
+        </button>
+
+        <div class="reviews__box">
+            <div class="reviews__page active an">
                 «Лечение кариеса проводится с использованием особо «щадящих» технологий. В расположении врача имеется необходимый набор современных инструментов, с помощью которых врач тщательно обрабатывает полость зуба, снимая пораженные ткани»
-                <div class="reviews-box__content-author">Светлана Сорокина</div> 
+                <div class="reviews__page-author">Светлана Сорокина</div> 
             </div>
-            <div class="reviews-box__item an">
+            <div class="reviews__page">
                 «Лечение кариеса проводится с использованием особо «щадящих» технологий. В расположении врача имеется необходимый набор современных инструментов, с помощью которых врач тщательно обрабатывает полость зуба, снимая пораженные ткани» .
-                <div class="reviews-box__content-author">Анатолий Анатольич</div> 
+                <div class="reviews__page-author">Анатолий Анатольич</div> 
             </div>
-            <div class="reviews-box__item an">
+            <div class="reviews__page">
                 «Лечение кариеса проводится с использованием особо «щадящих» технологий. В расположении врача имеется необходимый набор современных инструментов, с помощью которых врач тщательно обрабатывает полость зуба, снимая пораженные ткани» ..
-                <div class="reviews-box__content-author">Виктор Викторович</div> 
+                <div class="reviews__page-author">Виктор Викторович</div> 
             </div>
-            <div class="reviews-box__arrow" onclick="next_pages('.reviews-box__item', 'right')">
-                <img src="img/svg/arrow-green-right.svg" class="reviews-box__arrow-ico reviews-box__arrow-ico--right an" alt="icon">
-            </div>
+
         </div>
 
-        <div class="reviews__button">
-            <div class="reviews__btn-review an">НАПИСАТЬ ОТЗЫВ</div>
-            <div class="reviews__btn-allreview an">ПРОСМОТРЕТЬ ВСЕ ОТЗЫВЫ</div>
+        <button class="reviews__btn reviews__btn--right">
+            <img src="img/svg/arrow-green-right.svg" class="reviews__btn-ico an" alt="icon">
+        </button>
+   
+
+        <div class="reviews__buttons">
+            <div class="reviews__buttons-review an">НАПИСАТЬ ОТЗЫВ</div>
+            <div class="reviews__buttons-allreview an">ПРОСМОТРЕТЬ ВСЕ ОТЗЫВЫ</div>
         </div>
+
     </div>
 </section>

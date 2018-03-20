@@ -31,8 +31,8 @@
 
 
 /* --- анимация */
-.article__title.an--active {@include animates('lightSpeedIn', 1.5s);} 
-.article__button.an--active {@include animates('jackInTheBox', 1.5s);} 
+.article__title.an--run {@include animates('lightSpeedIn', 1.5s);} 
+.article__button.an--run {@include animates('jackInTheBox', 1.5s);} 
 
 
 

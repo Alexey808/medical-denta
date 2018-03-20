@@ -17,10 +17,6 @@
         &:nth-last-child(2) {
             margin-right: 2px;
         }
-
-        &:first-child:hover .feedback__point-tit {
-            color: $color1;
-        }
     }
 
     &__point-tit {}

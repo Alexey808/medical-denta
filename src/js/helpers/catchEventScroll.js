@@ -23,12 +23,10 @@ function scrolling(e) {
     for (var i = 0; i < listItems.length; i++) {
         
         var listItem = listItems[i];
-        // console.log(listItems[i]);
-        if (isPartiallyVisible(listItem)) {
-            listItem.classList.add("an--active");
-        } else {
-            listItem.classList.remove("an--active");
-        }
+
+        isPartiallyVisible(listItem) ? listItem.classList.add("an--run") : 0 ;
+        
+        //isPartiallyVisible(listItem) ? listItem.classList.add("an--run") : listItem.classList.remove("an--run") ;
     }
 }
 

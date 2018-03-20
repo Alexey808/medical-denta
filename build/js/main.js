@@ -11,10 +11,127 @@
 
 
 // --- other
-var isScrolling; //получает значение из objMobileDetect для catchEventScroll
-var md = new MobileDetect(window.navigator.userAgent);
+/* 
+* 1) Инициализация слайдера: 
+*     var newslider = new slider('nameSlider');
+*     
+* 2) Структура в html, с обязательным присутствием символов в классе в скобках:
+*     .nameSlider
+*         .nameContainer    //элемент не обязателен
+*             .( __box )
+*             .( __ind )    //элемент не обязателен
+*             .( __btn )
+*
+* 3) Должен присутствовать класс active.
+ */
 
 
+
+
+function slider(slider_name) {
+    console.log(slider_name)
+    let parent = detectParent();
+ 	var ind, page;
+ 	
+ 	for (let i=0; i<parent.childNodes.length; i++) {
+ 		if (parent.childNodes[i].nodeType == 1) {
+ 			let name = parent.childNodes[i];
+
+ 			if (~name.getAttribute('class').indexOf("__box")) {
+ 				page = getElements(name);
+ 			} 
+
+
+ 			if (~name.getAttribute('class').indexOf("__ind")) {
+ 				ind = getElements(name);
+                for (var prop in ind) {
+                    ind[prop].addEventListener("click", eventClick);
+                }
+ 			} 
+
+ 			if (~name.getAttribute('class').indexOf("__btn")) {
+                name.addEventListener("click", eventClick);
+ 			} 
+ 		}
+ 	}
+   
+    /* --- Определяем внутренний контейнер для слайдера. */
+    function detectParent() {
+        let elem = document.getElementById(slider_name);
+        let c = elem.childNodes;
+        let count = 0;
+        let num;
+        for (let j=0; j<elem.childNodes.length; j++) {
+            if (c[j].nodeType == 1) {
+                num = [j];
+                count++;
+            } 
+        }
+        return count > 2 ? elem : c[num];
+    }
+
+    /* --- Получить дочерние элементы */
+   	function getElements(n) {
+        let _arr = [];
+		for (let l=0; l<n.childNodes.length; l++) {
+			if (n.childNodes[l].nodeType == 1) {
+				_arr.push(n.childNodes[l]);
+			} 
+		}
+		return _arr;
+   	}
+
+    /* --- Event клик */
+    function eventClick() {
+        for (let i=0; i<page.length; i++) {
+            
+            /* page */
+            if (~page[i].getAttribute('class').indexOf("active")) {
+
+                /* button left */
+                if (~this.getAttribute('class').indexOf("left") && !!page[i-1]) {
+                    page[i].classList.remove('active'); 
+                    page[i-1].classList.add('active');
+                    ind ? ind[i].classList.remove('active') : 0;
+                    ind ? ind[i-1].classList.add('active') : 0;
+                    break;
+                } else if (~this.getAttribute('class').indexOf("left") && !page[i-1]) {
+                    page[i].classList.remove('active'); 
+                    page[page.length-1].classList.add('active');
+                    ind ? ind[i].classList.remove('active') : 0;
+                    ind ? ind[ind.length-1].classList.add('active') : 0;
+                    break;
+                }
+
+                /* button right */
+                if (~this.getAttribute('class').indexOf("right") && !!page[i+1]) {
+                    page[i].classList.remove('active'); 
+                    page[i+1].classList.add('active');                  
+                    ind ? ind[i].classList.remove('active') : 0;
+                    ind ? ind[i+1].classList.add('active') : 0;
+                    break;
+                } else if (~this.getAttribute('class').indexOf("right") && !page[i+1]) {
+                    page[i].classList.remove('active'); 
+                    page[0].classList.add('active');
+                    ind ? ind[i].classList.remove('active') : 0;
+                    ind ? ind[0].classList.add('active') : 0;
+                    break;
+                }
+            } 
+
+            /* indicators */
+            if (!!ind && ~ind[i].getAttribute('class').indexOf("active") && ind[i] != this) {
+                page[i].classList.remove('active');    
+                ind[i].classList.remove('active');
+            }
+            else if (!!ind && ind[i] == this) {
+                page[i].classList.add('active');
+                this.classList.add('active');
+            }
+        }
+    }
+
+}
 // var isScrolling = false; //определяю в objMobileDetect.js
 
 window.addEventListener("scroll", throttleScroll, false);
@@ -40,12 +157,10 @@ function scrolling(e) {
     for (var i = 0; i < listItems.length; i++) {
         
         var listItem = listItems[i];
-        // console.log(listItems[i]);
-        if (isPartiallyVisible(listItem)) {
-            listItem.classList.add("an--active");
-        } else {
-            listItem.classList.remove("an--active");
-        }
+
+        isPartiallyVisible(listItem) ? listItem.classList.add("an--run") : 0 ;
+        
+        //isPartiallyVisible(listItem) ? listItem.classList.add("an--run") : listItem.classList.remove("an--run") ;
     }
 }
 
@@ -82,83 +197,15 @@ function FloatColorMenu (header) {
         header.classList.remove('header__nav--color');
     }
 }
-/* reviews | строничник боковые кнопки */
-function next_pages(pages, direction){
 
-    var point = document.querySelectorAll(pages);
-    var arrPoint = Array.prototype.slice.call(point);
+var isScrolling; //получает значение из objMobileDetect для catchEventScroll
+var md = new MobileDetect(window.navigator.userAgent);
 
-    for (var i=0; i < arrPoint.length; i++) {
-        var check = arrPoint[i].classList.contains('reviews-box__item--active');
+var headslider = new slider('headslider');
+var aboutslider = new slider('aboutslider');
+var reviews = new slider('reviews');
 
-        if (check && direction == 'left') {
-            
-            if (arrPoint[i-1]) {
-                arrPoint[i].classList.remove('reviews-box__item--active'); 
-                arrPoint[i-1].classList.add('reviews-box__item--active'); 
-                return
-            } 
-            if (!arrPoint[i-1]) {
-                arrPoint[i].classList.remove('reviews-box__item--active'); 
-                arrPoint[arrPoint.length - 1].classList.add('reviews-box__item--active'); 
-                return;
-            }
-        }
-        if (check && direction == 'right') {
-            if (arrPoint[i+1]) {
-                console.log('элемент найден');
-                arrPoint[i].classList.remove('reviews-box__item--active'); 
-                arrPoint[i+1].classList.add('reviews-box__item--active'); 
-                return
-            } 
-            if (!arrPoint[i+1]) {
-                console.log('след элемент не найденн, идём в конец');
-                arrPoint[i].classList.remove('reviews-box__item--active'); 
-                arrPoint[0].classList.add('reviews-box__item--active'); 
-                return;
-            }
-        }
-    }
-}
-/*слайдер боковые кнопки*/
-function active_arrow(target, direction) {
 
-    var point = document.querySelectorAll(target);
-    var arrPoint = Array.prototype.slice.call(point);
-
-    for (var i=0; i < arrPoint.length; i++) {
-        console.log(arrPoint[i]);
-        var elem_checked = arrPoint[i].hasAttribute('checked');
-
-        //левая кнопка 
-        if (elem_checked && direction == 'left') { 
-            if (arrPoint[i-1]) {
-                arrPoint[i].removeAttribute('checked');
-                arrPoint[i-1].setAttribute("checked", "checked");
-                return;
-            }
-            if (!arrPoint[i-1]) {
-                arrPoint[i].removeAttribute('checked');
-                arrPoint[arrPoint.length - 1].setAttribute("checked", "checked");
-                return;
-            } else {'error';}
-        }
-
-        //правая кнопка
-        if (elem_checked && direction == 'right') { 
-            if (arrPoint[i+1]) {
-                arrPoint[i].removeAttribute('checked');
-                arrPoint[i+1].setAttribute("checked", "checked");
-                return;
-            } 
-            if (!arrPoint[i+1]) {
-                arrPoint[i].removeAttribute('checked');
-                arrPoint[0].setAttribute("checked", "checked");
-                return;
-            } else {'error';}
-        }
-    }
-}
 
 
 //проверка на IE

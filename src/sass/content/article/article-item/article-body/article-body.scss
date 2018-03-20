@@ -54,6 +54,6 @@
 }
 
 /* --- анимация */
-.article-body__tit.an--active {@include animates('zoomIn', 1s);} 
-.article-body__content.an--active {@include animates('zoomIn', 1.5s);} 
-.article-body__btn.an--active {@include animates('slideInRight', 1.5s);} 
+.article-body__tit.an--run {@include animates('zoomIn', 1s);} 
+.article-body__content.an--run {@include animates('zoomIn', 1.5s);} 
+.article-body__btn.an--run {@include animates('slideInRight', 1.5s);} 

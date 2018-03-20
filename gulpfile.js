@@ -97,7 +97,7 @@ gulp.task('style:build', ()=> {
         .pipe(sourceMaps.init())
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(autoprefixer({browsers: ['last 9 versions'], cascade: false}))
-        .pipe(cleanCSS())
+        //.pipe(cleanCSS())
         .pipe(sourceMaps.write())
         .pipe(gulp.dest(path.build.css))
         .pipe(browserSync.reload({stream: true})); 
